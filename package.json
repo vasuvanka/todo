@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "build:github": "ng build --prod --output-path docs --base-href /todo/",
+    "build:github": "ng build --output-path docs --base-href /todo/",
     "test": "ng test"
   },
   "private": true,
