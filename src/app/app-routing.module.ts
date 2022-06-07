@@ -1,10 +1,32 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { TodoComponent } from './components/todo/todo.component';
+import { WeatherComponent } from './components/weather/weather.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+    children: [
+      {
+        path: '',
+        component: TodoComponent,
+      },
+      {
+        path: 'weather',
+        component: WeatherComponent,
+      },
+    ],
+  },
+  {
+    path: '**',
+    redirectTo: '/',
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
